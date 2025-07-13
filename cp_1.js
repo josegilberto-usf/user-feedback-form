@@ -4,13 +4,13 @@ const charCount = document.getElementById('char-count');
 const feedbackDisplay = document.getElementById('feedback-display');
 
 commentBox.addEventListener('input', () => {
-    charCount.textContent = `Characters: ${commentBox.value.length}`;
+    charCount.textContent = `${commentBox.value.length} characters`;
 });
 
 form.addEventListener('mouseover', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
         const tooltip = document.createElement('div');
-        tooltip.textContent = 'Please fill out the ${e.target.name}';
+        tooltip.textContent = 'Please fill out this field.';
         tooltip.className = 'tooltip';
         e.target.parentElement.appendChild(tooltip);
     }
@@ -41,6 +41,6 @@ form.addEventListener('submit', (e) => {
     feedbackDisplay.appendChild(entry);
 
     form.reset();
-    charCount.textContent = 'Characters: 0';
+    charCount.textContent = '0 characters';
 });
 
